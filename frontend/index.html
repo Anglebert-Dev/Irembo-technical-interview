@@ -47,12 +47,14 @@
             <div class="form-group">
               <label class="required">Identification Document Number</label>
               <input
-                type="text"
+                type="number"
                 class="form-control"
                 id="identificationNumber"
                 name="identificationNumber"
                 placeholder="Enter ID number"
+                min="1000000000000000"
               />
+              required />
               <div class="error-message"></div>
             </div>
           </div>
