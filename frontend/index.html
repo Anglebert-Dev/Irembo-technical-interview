@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RICA Import Permit Application</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <i class="fas fa-file-import"></i>
+      <span class="header-title">RICA Import Permit Application</span>
+    </header>
+
+    <div class="container">
+      <form id="ricaForm">
+        <!-- Business Owner Details Section -->
+        <div class="form-section">
+          <div class="section-header">
+            <i class="fas fa-user"></i>
+            Business Owner Details
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="required">Applicant Citizenship</label>
+              <select
+                class="form-control"
+                id="applicantCitizenship"
+                name="applicantCitizenship"
+                required
+              >
+                <option value="">Select citizenship</option>
+                <option value="Rwandan">Rwandan</option>
+                <option value="Foreigner">Foreigner</option>
+              </select>
+              <div class="error-message"></div>
+            </div>
+          </div>
+
+          <!-- Added identification document fields -->
+          <div class="form-row" id="rwandanFields" style="display: none">
+            <div class="form-group">
+              <label class="required">Identification Document Number</label>
+              <input
+                type="text"
+                class="form-control"
+                id="identificationNumber"
+                name="identificationNumber"
+                placeholder="Enter ID number"
+              />
+              <div class="error-message"></div>
+            </div>
+          </div>
+
+          <div class="form-row" id="foreignerFields" style="display: none">
+            <div class="form-group">
+              <label class="required">Passport Number</label>
+              <input
+                type="text"
+                class="form-control"
+                id="passportNumber"
+                name="passportNumber"
+              />
+              <div class="error-message"></div>
+            </div>
+          </div>
+
+          <!-- Added name fields -->
+          <div class="form-row">
+            <div class="form-group">
+              <label class="required">Other Names</label>
+              <input
+                type="text"
+                class="form-control"
+                id="otherNames"
+                name="otherNames"
+                required
+                placeholder="Enter other names"
+              />
+              <div class="error-message"></div>
+            </div>
+            <div class="form-group">
+              <label class="required">Surname</label>
+              <input
+                type="text"
+                class="form-control"
+                id="surname"
+                name="surname"
+                required
+                placeholder="Enter surname"
+              />
+              <div class="error-message"></div>
+            </div>
+          </div>
+
+          <!-- Added nationality field -->
+          <div class="form-row">
+            <div class="form-group">
+              <label class="required">Nationality</label>
+              <select
+                class="form-control"
+                id="nationality"
+                name="nationality"
+                required
+              >
+                <option value="">Select nationality</option>
+              </select>
+              <div class="error-message"></div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input
+                type="tel"
+                class="form-control"
+                id="phoneNumber"
+                name="phoneNumber"
+                placeholder="+250 781234567"
+              />
+            </div>
+            <div class="form-group">
+              <label>Email Address</label>
+              <input
+                type="email"
+                class="form-control"
+                id="emailAddress"
+                name="emailAddress"
+                placeholder="Enter email address"
+              />
+            </div>
+          </div>
+
+          <!-- Updated location fields -->
+          <div class="form-row">
+            <div class="form-group">
+              <label class="required">Province</label>
+              <select
+                class="form-control"
+                id="province"
+                name="province"
+                required
+              >
+                <option value="">Select province</option>
+              </select>
+              <div class="error-message"></div>
+            </div>
+            <div class="form-group">
+              <label class="required">District</label>
+              <input
+                type="text"
+                class="form-control"
+                id="district"
+                name="district"
+                placeholder="Enter district"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Business Details Section -->
+        <div class="form-section">
+          <div class="section-header">
+            <i class="fas fa-building"></i>
+            Business Details
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="required">Business Type</label>
+              <select
+                class="form-control"
+                id="businessType"
+                name="businessType"
+                required
+              >
+                <option value="">Select business type</option>
+                <option value="Retailer">Retailer</option>
+                <option value="Wholesale">Wholesale</option>
+                <option value="Manufacturer">Manufacturer</option>
+              </select>
+              <div class="error-message"></div>
+            </div>
+            <div class="form-group">
+              <label class="required">Company Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="companyName"
+                name="companyName"
+                placeholder="Enter company name"
+                required
+              />
+              <div class="error-message"></div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="required">TIN Number</label>
+              <input
+                type="text"
+                class="form-control"
+                id="tinNumber"
+                name="tinNumber"
+                placeholder="Enter TIN Number"
+                required
+                pattern="[0-9]{9}"
+              />
+              <div class="error-message"></div>
+            </div>
+            <div class="form-group">
+              <label class="required">Registration Date</label>
+              <input
+                type="date"
+                class="form-control"
+                id="registrationDate"
+                name="registrationDate"
+                required
+              />
+              <div class="error-message"></div>
+            </div>
+          </div>
+
+          <!-- Updated business location fields -->
+          <div class="form-row">
+            <div class="form-group">
+              <label class="required">Province</label>
+              <select
+                class="form-control"
+                id="businessProvince"
+                name="businessProvince"
+                required
+              >
+                <option value="">Select province</option>
+              </select>
+              <div class="error-message"></div>
+            </div>
+            <div class="form-group">
+              <label class="required">District</label>
+              <input
+                type="text"
+                class="form-control"
+                id="businessDistrict"
+                name="district"
+                placeholder="Enter district"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Information Section -->
+        <div class="form-section">
+          <div class="section-header">
+            <i class="fas fa-box"></i>
+            Product Information
+          </div>
+
+          <div class="form-group">
+            <label class="required">Purpose of Importation</label>
+            <select
+              class="form-control"
+              id="purposeOfImportation"
+              name="purposeOfImportation"
+              required
+            >
+              <option value="">Enter the purpose of importation</option>
+              <option value="Direct sale">Direct sale</option>
+              <option value="Personal use">Personal use</option>
+              <option value="Trial use">Trial use</option>
+              <option value="Other">Other</option>
+            </select>
+            <div class="error-message"></div>
+          </div>
+
+          <!-- Added specify purpose field -->
+          <div
+            class="form-group"
+            id="specifyPurposeField"
+            style="display: none"
+          >
+            <label class="required">Specify Purpose of Importation</label>
+            <input
+              type="text"
+              class="form-control"
+              id="specifyPurpose"
+              name="specifyPurpose"
+            />
+            <div class="error-message"></div>
+          </div>
+
+          <div class="form-group">
+            <label class="required">Product Category</label>
+            <select
+              class="form-control"
+              id="productCategory"
+              name="productCategory"
+              required
+            >
+              <option value="">Select product category</option>
+              <option value="General purpose">General purpose</option>
+              <option value="Construction materials">
+                Construction materials
+              </option>
+              <option value="Chemicals">Chemicals</option>
+            </select>
+            <div class="error-message"></div>
+          </div>
+
+          <!-- Added product name field -->
+          <div class="form-group">
+            <label class="required">Product Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="productName"
+              name="productName"
+              placeholder="Enter product name"
+              required
+            />
+            <div class="error-message"></div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Weight (kg)</label>
+              <input
+                type="number"
+                class="form-control"
+                id="weight"
+                name="weight"
+                placeholder="Weight (kg)"
+              />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="required">Unit of Measurement</label>
+              <select
+                class="form-control"
+                id="unitOfMeasurement"
+                name="unitOfMeasurement"
+                required
+              >
+                <option value="">Select unit of measurement</option>
+                <option value="Kgs">Kgs</option>
+                <option value="Tonnes">Tonnes</option>
+              </select>
+              <div class="error-message"></div>
+            </div>
+            <div class="form-group">
+              <label class="required">Quantity of Product(s)</label>
+              <input
+                type="number"
+                class="form-control"
+                id="quantityOfProducts"
+                name="quantityOfProducts"
+                placeholder="Enter quantity of product"
+                required
+                min="1"
+              />
+              <div class="error-message"></div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="required">Description of Products</label>
+            <textarea
+              class="form-control"
+              id="descriptionOfProducts"
+              name="descriptionOfProducts"
+              placeholder="Enter product description"
+              required
+            ></textarea>
+            <div class="error-message"></div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-submit">Submit Application</button>
+      </form>
+    </div>
+
+    <script src="api.js"></script>
+  </body>
+</html>
