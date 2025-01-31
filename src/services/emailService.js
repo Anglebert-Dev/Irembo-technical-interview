@@ -135,13 +135,14 @@ const sendPermitEmail = async (permit) => {
               <tr>
                 <th>Weight (Kg)</th>
                 <td>${permit.productInformation.productDetails.weightKg} ${
-                  permit.productInformation.productDetails.unitOfMeasurement
-                }kg</td>
+    permit.productInformation.productDetails.unitOfMeasurement
+  }</td>
               </tr>
               <tr>
                 <th>Quantity</th>
                 <td>${
-                  permit.productInformation.productDetails.quantityOfProducts} </td>
+                  permit.productInformation.productDetails.quantityOfProducts
+                } </td>
               </tr>
               <tr>
                 <th>Description</th>
