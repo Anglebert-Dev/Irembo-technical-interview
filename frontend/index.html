@@ -54,7 +54,6 @@
                 placeholder="Enter ID number"
                 min="1000000000000000"
               />
-              required />
               <div class="error-message"></div>
             </div>
           </div>
@@ -63,10 +62,11 @@
             <div class="form-group">
               <label class="required">Passport Number</label>
               <input
-                type="text"
+                type="number"
                 class="form-control"
                 id="passportNumber"
                 name="passportNumber"
+                min="1000000000000000"
               />
               <div class="error-message"></div>
             </div>
