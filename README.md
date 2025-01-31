@@ -77,7 +77,7 @@ Submit a new permit application. This endpoint accepts a JSON payload with the a
 {
   "businessOwner": {
     "applicantCitizenship": "Rwandan",
-    "identificationNumber": "1200480089314068",
+    "identificationNumber": "12345678910111",
     "passportNumber": "",
     "otherNames": "Anglebert",
     "surname": "Shumbusho Ishimwe",
